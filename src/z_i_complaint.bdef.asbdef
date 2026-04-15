@@ -1,0 +1,25 @@
+unmanaged implementation in class zbp_i_complaint unique;
+strict ( 2 );
+
+define behavior for Z_I_COMPLAINT alias Complaint
+lock master
+authorization master ( instance )
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) ComplaintId;
+
+  action generatePDF result [1] $self;
+
+  // Add this mapping block!
+  mapping for zcomplaint_tab
+  {
+    ComplaintId = complaint_id;
+    Description = description;
+    Customer    = customer;
+    Status      = status;
+    CreatedAt   = created_at;
+  }
+}

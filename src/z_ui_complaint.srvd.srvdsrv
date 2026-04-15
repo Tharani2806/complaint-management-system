@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Complaints'
+define service Z_UI_COMPLAINT {
+  expose Z_C_COMPLAINT as Complaint;
+}

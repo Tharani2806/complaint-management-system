@@ -1,0 +1,12 @@
+projection;
+strict ( 2 );
+
+define behavior for Z_C_COMPLAINT alias Complaint
+{
+  use create;
+  use update;
+  use delete;
+
+  // You must explicitly "use" the action here so the UI can call it!
+  use action generatePDF;
+}
